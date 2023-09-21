@@ -1,0 +1,289 @@
+{
+  "subjects": {
+    "React": [
+      {
+        "question": "What is React?",
+        "options": ["A JavaScript framework", "A programming language", "A design pattern", "A markup language"],
+        "correctAnswer": 0,
+        "points": 10
+      },
+      {
+        "question": "Which of the following is not a React component lifecycle method?",
+        "options": ["componentDidMount", "componentWillUnmount", "componentShouldUpdate", "componentRender"],
+        "correctAnswer": 3,
+        "points": 10
+      },
+      {
+        "question": "What is JSX in React?",
+        "options": ["JavaScript XML", "JavaScript Extension", "Java Syntax Extension", "JavaScript XML Syntax"],
+        "correctAnswer": 0,
+        "points": 10
+      },
+      {
+        "question": "What does React use to update the user interface efficiently?",
+        "options": ["DOM manipulation", "Virtual DOM", "HTML templates", "jQuery"],
+        "correctAnswer": 1,
+        "points": 10
+      },
+      {
+        "question": "In React, props are used for:",
+        "options": ["Setting initial state", "Inter-component communication", "Handling events", "Conditional rendering"],
+        "correctAnswer": 1,
+        "points": 10
+      },
+      {
+        "question": "Which hook is used to perform side effects in functional components?",
+        "options": ["useState", "useEffect", "useContext", "useReducer"],
+        "correctAnswer": 1,
+        "points": 10
+      },
+      {
+        "question": "What is the purpose of the React Router library?",
+        "options": ["Managing state in React components", "Handling HTTP requests", "Implementing client-side routing", "Creating animations"],
+        "correctAnswer": 2,
+        "points": 10
+      },
+      {
+        "question": "Which function should you use to render a list of items in React?",
+        "options": ["map()", "forEach()", "filter()", "reduce()"],
+        "correctAnswer": 0,
+        "points": 10
+      },
+      {
+        "question": "What is the purpose of the key prop when rendering lists in React?",
+        "options": ["It defines the item's color", "It provides a unique identifier for each item", "It sets the font size of each item", "It determines the item's visibility"],
+        "correctAnswer": 1,
+        "points": 10
+      },
+      {
+        "question": "What is the context API used for in React?",
+        "options": ["Managing application themes", "Managing application state that can be shared across components", "Creating animations", "Handling HTTP requests"],
+        "correctAnswer": 1,
+        "points": 10
+      },
+      {
+        "question": "Which function is used to update the state in a class component?",
+        "options": ["this.setState()", "this.updateState()", "this.modifyState()", "this.changeState()"],
+        "correctAnswer": 0,
+        "points": 10
+      },
+      {
+        "question": "What is a controlled component in React?",
+        "options": [
+          "A component that controls other components",
+          "A component that uses uncontrolled inputs",
+          "A component that relies on internal state for form inputs",
+          "A component that is not controlled by a parent component"
+        ],
+        "correctAnswer": 2,
+        "points": 10
+      },
+      {
+        "question": "What does Redux provide for managing application state in React?",
+        "options": ["Context API", "LocalStorage", "Global variables", "A predictable state container"],
+        "correctAnswer": 3,
+        "points": 10
+      },
+      {
+        "question": "Which method is used to fetch data from an API in React?",
+        "options": ["fetchData()", "axios()", "get()", "retrieveData()"],
+        "correctAnswer": 1,
+        "points": 10
+      },
+      {
+        "question": "What is the purpose of PropTypes in React?",
+        "options": [
+          "To define the types of props a component expects",
+          "To define the types of state a component can have",
+          "To specify the types of HTML elements a component can render",
+          "To define the types of functions a component can use"
+        ],
+        "correctAnswer": 0,
+        "points": 10
+      }
+    ],
+    "JavaScript": [
+      {
+        "question": "What is JavaScript primarily used for?",
+        "options": ["Styling web pages", "Creating web animations", "Building web applications", "Managing databases"],
+        "correctAnswer": 2,
+        "points": 10
+      },
+      {
+        "question": "Which keyword is used to declare a variable in JavaScript?",
+        "options": ["var", "let", "const", "variable"],
+        "correctAnswer": 0,
+        "points": 10
+      },
+      {
+        "question": "What is the result of 2 + '2' in JavaScript?",
+        "options": ["4", "22", "NaN", "Error"],
+        "correctAnswer": 1,
+        "points": 10
+      },
+      {
+        "question": "What does 'NaN' stand for in JavaScript?",
+        "options": ["Not a Number", "New and Notable", "Number and Null", "Notable and Null"],
+        "correctAnswer": 0,
+        "points": 10
+      },
+      {
+        "question": "Which of the following is a falsy value in JavaScript?",
+        "options": ["0", "1", "true", "null"],
+        "correctAnswer": 0,
+        "points": 10
+      },
+      {
+        "question": "What is the purpose of the 'typeof' operator in JavaScript?",
+        "options": ["To check if a variable is defined", "To check the data type of a value", "To perform arithmetic operations", "To define a new variable"],
+        "correctAnswer": 1,
+        "points": 10
+      },
+      {
+        "question": "How do you declare a single-line comment in JavaScript?",
+        "options": ["// This is a comment", "/* This is a comment */", "# This is a comment", "comment: This is a comment"],
+        "correctAnswer": 0,
+        "points": 10
+      },
+      {
+        "question": "Which of the following is used to loop through an array in JavaScript?",
+        "options": ["for-in loop", "while loop", "do-while loop", "for loop"],
+        "correctAnswer": 3,
+        "points": 10
+      },
+      {
+        "question": "What is the purpose of the 'try...catch' statement in JavaScript?",
+        "options": ["To define a new function", "To handle exceptions and errors", "To create a new variable", "To loop through an array"],
+        "correctAnswer": 1,
+        "points": 10
+      },
+      {
+        "question": "Which function is used to convert a string to an integer in JavaScript?",
+        "options": ["parseInt()", "parseFloat()", "toInteger()", "toInt()"],
+        "correctAnswer": 0,
+        "points": 10
+      },
+      {
+        "question": "What is the 'this' keyword in JavaScript used for?",
+        "options": ["Referring to the current function", "Referring to the parent object", "Referring to the global object", "Referring to a specific DOM element"],
+        "correctAnswer": 1,
+        "points": 10
+      },
+      {
+        "question": "Which operator is used for strict equality comparison in JavaScript?",
+        "options": ["==", "===", "!=", "!=="],
+        "correctAnswer": 1,
+        "points": 10
+      },
+      {
+        "question": "What is an anonymous function in JavaScript?",
+        "options": ["A function with no parameters", "A function without a name", "A function that returns undefined", "A function with a hidden code"],
+        "correctAnswer": 1,
+        "points": 10
+      },
+      {
+        "question": "What does the 'JSON' acronym stand for in JavaScript?",
+        "options": ["JavaScript Object Notation", "JavaScript Object Network", "JavaScript Operator Namespace", "JavaScript Overly Nested"],
+        "correctAnswer": 0,
+        "points": 10
+      },
+      {
+        "question": "Which built-in method is used to display a dialog box with a message in JavaScript?",
+        "options": ["alert()", "message()", "dialog()", "prompt()"],
+        "correctAnswer": 0,
+        "points": 10
+      }
+    ],
+    "Nodejs": [
+      {
+        "question": "What is Node.js primarily used for?",
+        "options": ["Building web browsers", "Building mobile applications", "Building server-side applications", "Creating animations"],
+        "correctAnswer": 2,
+        "points": 10
+      },
+      {
+        "question": "Which module is used to create a web server in Node.js?",
+        "options": ["http", "fs", "path", "url"],
+        "correctAnswer": 0,
+        "points": 10
+      },
+      {
+        "question": "What is the Node Package Manager (NPM) used for?",
+        "options": ["Managing JavaScript packages and dependencies", "Creating database tables", "Building user interfaces", "Running server-side scripts"],
+        "correctAnswer": 0,
+        "points": 10
+      },
+      {
+        "question": "In Node.js, which keyword is used to include external modules?",
+        "options": ["require", "import", "module", "external"],
+        "correctAnswer": 0,
+        "points": 10
+      },
+      {
+        "question": "What is the purpose of the 'fs' module in Node.js?",
+        "options": ["To manage web servers", "To work with file systems", "To create database connections", "To handle HTTP requests"],
+        "correctAnswer": 1,
+        "points": 10
+      },
+      {
+        "question": "Which of the following is a built-in object in Node.js?",
+        "options": ["window", "document", "global", "browser"],
+        "correctAnswer": 2,
+        "points": 10
+      },
+      {
+        "question": "What is 'npm init' used for in Node.js?",
+        "options": ["To initialize a new project", "To start a Node.js server", "To create a database", "To install global packages"],
+        "correctAnswer": 0,
+        "points": 10
+      },
+      {
+        "question": "What does the 'process' object provide in Node.js?",
+        "options": ["Access to the file system", "Access to the browser's DOM", "Access to environment variables and process-related information", "Access to database connections"],
+        "correctAnswer": 2,
+        "points": 10
+      },
+      {
+        "question": "What is a 'callback' in Node.js?",
+        "options": ["A function that is executed when an asynchronous operation is completed", "A built-in module for database operations", "A type of variable declaration", "A debugging tool"],
+        "correctAnswer": 0
+      },
+      {
+        "question": "Which module is commonly used for handling asynchronous operations in Node.js?",
+        "options": ["fs", "http", "async", "database"],
+        "correctAnswer": 2,
+        "points": 10
+      },
+      {
+        "question": "What is 'npm install' used for in Node.js?",
+        "options": ["To uninstall a package", "To update all installed packages", "To install dependencies specified in package.json", "To install a global package"],
+        "correctAnswer": 2,
+        "points": 10
+      },
+      {
+        "question": "What is the 'require' function used for in Node.js?",
+        "options": ["To uninstall modules", "To include external modules", "To delete files", "To create a new server"],
+        "correctAnswer": 1,
+        "points": 10
+      },
+      {
+        "question": "What is the purpose of the 'util' module in Node.js?",
+        "options": ["To create user interfaces", "To perform utility functions", "To parse JSON data", "To handle HTTP requests"],
+        "correctAnswer": 1,
+        "points": 10
+      },
+      {
+        "question": "In Node.js, which object provides information about the current module?",
+        "options": ["module", "exports", "info", "currentModule"],
+        "correctAnswer": 0,
+        "points": 10
+      },
+      {
+        "question": "What is 'npm start' used for in Node.js?",
+        "options": ["To list all installed packages", "To run the Node.js application", "To initialize a new project", "To create a database"],
+        "correctAnswer": 1,
+        "points": 10
+      }
+    ]
+  }
+}
