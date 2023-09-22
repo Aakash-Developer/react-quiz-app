@@ -5,8 +5,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer {
+@layer base {
   body {
     @apply bg-gray-950 text-white;
+  }
+}
+
+@layer base {
+  .answerBtn {
+    @apply p-2 rounded-full bg-slate-900 hover:bg-slate-800 active:bg-slate-900 hover:relative  hover:scale-105 transition-all ease-in duration-300 cursor-pointer;
   }
 }
