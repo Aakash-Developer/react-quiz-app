@@ -5,10 +5,13 @@ import Loader from "./components/Loader";
 import ErrorMessage from "./components/ErrorMessage'";
 import Welcome from "./pages/Welcome";
 import Qusestions from "./components/Qusestions";
+import NextButton from "./components/NextButton";
+import Progress from "./components/Progress";
+import FinishQuiz from "./components/FinishQuiz";
 
 const initialState = {
   qusetions: [],
-  // 'loading','error','ready','active','finish'
+  // 'loading','error','ready','active','finished'
   status: "loading",
   index: 0,
   answer: null,
@@ -24,20 +27,30 @@ function reducer(state, action) {
     case "start":
       return { ...state, status: "active" };
     case "newAnswer":
-      return { ...state, answer: action.payload };
+      const question = state.qusetions[state.index];
+      return {
+        ...state,
+        answer: action.payload,
+        points: action.payload === question.correctAnswer ? state.points + question.points : state.points,
+      };
+    case "nextQuestion":
+      return { ...state, index: state.index + 1, answer: null };
+    case "finished":
+      return { ...state, status: "finished" };
     default:
       throw new Error("Unknown action.");
   }
 }
 
 export default function App() {
-  const [{ qusetions, status, index, answer }, dispatch] = useReducer(reducer, initialState);
-  const numOfQusestions = qusetions.React?.length;
+  const [{ qusetions, status, index, answer, points }, dispatch] = useReducer(reducer, initialState);
+  const numOfQuestions = qusetions?.length;
+  const maxPoints = qusetions.reduce((prev, cur) => prev + cur.points, 0);
 
   useEffect(() => {
     fetch("http://localhost:1735/subjects")
       .then((res) => res.json())
-      .then((data) => dispatch({ type: "dataRecived", payload: data }))
+      .then((data) => dispatch({ type: "dataRecived", payload: data.React }))
       .catch((error) => dispatch({ type: "dataFailed" }));
   }, []);
 
@@ -47,12 +60,15 @@ export default function App() {
       <Main>
         {status === "loading" && <Loader />}
         {status === "error" && <ErrorMessage />}
-        {status === "ready" && <Welcome numOfQusestions={numOfQusestions} dispatch={dispatch} />}
-        {status === "active" && <Qusestions qusetions={qusetions.React[index]} dispatch={dispatch} answer={answer} />}
-        {/* <div className="font-roboto">
-          <p>1 / 15</p>
-          <p>Qustions?</p>
-        </div> */}
+        {status === "ready" && <Welcome numOfQuestions={numOfQuestions} dispatch={dispatch} />}
+        {status === "active" && (
+          <>
+            <Progress numOfQuestions={numOfQuestions} index={index} points={points} maxPoints={maxPoints} answer={answer} />
+            <Qusestions qusetions={qusetions[index]} dispatch={dispatch} answer={answer} />
+            <NextButton dispatch={dispatch} answer={answer} index={index} numOfQuestions={numOfQuestions} />
+          </>
+        )}
+        {status === "finished" && <FinishQuiz numOfQuestions={numOfQuestions} index={index} points={points} maxPoints={maxPoints} answer={answer} dispatch={dispatch} />}
       </Main>
     </>
   );
