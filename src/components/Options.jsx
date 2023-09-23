@@ -14,9 +14,9 @@ export default function Options({ qusetions, dispatch, answer }) {
 
     if (hasAnswer) {
       if (index !== correctAnswer) {
-        className += "bg-red-700 ";
+        className += "bg-red-700 cursor-not-allowed";
       } else {
-        className += "bg-green-700";
+        className += "bg-green-700 cursor-not-allowed";
       }
     }
 
@@ -29,7 +29,7 @@ export default function Options({ qusetions, dispatch, answer }) {
       {qusetions.options.map((option, index) => (
         <button
           key={option}
-          className={`answerBtn ${getClassName(index, answer, hasAnswer, qusetions.correctAnswer)}`}
+          className={`answerBtn  ${getClassName(index, answer, hasAnswer, qusetions.correctAnswer)}`}
           onClick={() => dispatch({ type: "newAnswer", payload: index })}
           disabled={hasAnswer}>
           <p className="flex items-center">
