@@ -8,6 +8,10 @@ import Qusestions from "./components/Qusestions";
 import NextButton from "./components/NextButton";
 import Progress from "./components/Progress";
 import FinishQuiz from "./components/FinishQuiz";
+import Timer from "./components/Timer";
+import Footer from "./components/Footer";
+
+const SECS_PER_QUESTION = 30;
 
 const initialState = {
   qusetions: [],
@@ -17,6 +21,7 @@ const initialState = {
   answer: null,
   points: 0,
   highscore: 0,
+  secondsRemainig: null,
 };
 
 function reducer(state, action) {
@@ -26,7 +31,7 @@ function reducer(state, action) {
     case "dataFailed":
       return { ...state, status: "error" };
     case "start":
-      return { ...state, status: "active" };
+      return { ...state, status: "active", secondsRemainig: state.qusetions.length * SECS_PER_QUESTION };
     case "newAnswer":
       const question = state.qusetions[state.index];
       return {
@@ -40,13 +45,15 @@ function reducer(state, action) {
       return { ...state, status: "finished", highscore: state.points > state.highscore ? state.points : state.highscore };
     case "restart":
       return { ...initialState, qusetions: state.qusetions, status: "ready" };
+    case "tick":
+      return { ...state, secondsRemainig: state.secondsRemainig - 1, status: state.secondsRemainig === 0 ? "finished" : state.status };
     default:
       throw new Error("Unknown action.");
   }
 }
 
 export default function App() {
-  const [{ qusetions, status, index, answer, points, highscore }, dispatch] = useReducer(reducer, initialState);
+  const [{ qusetions, status, index, answer, points, highscore, secondsRemainig }, dispatch] = useReducer(reducer, initialState);
   const numOfQuestions = qusetions?.length;
   const maxPoints = qusetions.reduce((prev, cur) => prev + cur.points, 0);
 
@@ -68,7 +75,12 @@ export default function App() {
           <>
             <Progress numOfQuestions={numOfQuestions} index={index} points={points} maxPoints={maxPoints} answer={answer} />
             <Qusestions qusetions={qusetions[index]} dispatch={dispatch} answer={answer} />
-            <NextButton dispatch={dispatch} answer={answer} index={index} numOfQuestions={numOfQuestions} />
+            <Footer>
+              <Timer dispatch={dispatch} secondsRemainig={secondsRemainig} />
+              <div>
+                <NextButton dispatch={dispatch} answer={answer} index={index} numOfQuestions={numOfQuestions} />
+              </div>
+            </Footer>
           </>
         )}
         {status === "finished" && <FinishQuiz numOfQuestions={numOfQuestions} index={index} points={points} maxPoints={maxPoints} answer={answer} dispatch={dispatch} highscore={highscore} />}
