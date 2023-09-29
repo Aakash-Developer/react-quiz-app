@@ -10,6 +10,7 @@ import Progress from "./components/Progress";
 import FinishQuiz from "./components/FinishQuiz";
 import Timer from "./components/Timer";
 import Footer from "./components/Footer";
+import quzie from "./constants/quzies";
 
 const SECS_PER_QUESTION = 30;
 
@@ -26,6 +27,8 @@ const initialState = {
 
 function reducer(state, action) {
   switch (action.type) {
+    case "loading":
+      return { ...state, status: "loading" };
     case "dataRecived":
       return { ...state, qusetions: action.payload, status: "ready" };
     case "dataFailed":
@@ -57,11 +60,18 @@ export default function App() {
   const numOfQuestions = qusetions?.length;
   const maxPoints = qusetions.reduce((prev, cur) => prev + cur.points, 0);
 
+  console.log(quzie);
+
   useEffect(() => {
-    fetch("http://localhost:1735/subjects")
-      .then((res) => res.json())
-      .then((data) => dispatch({ type: "dataRecived", payload: data.React }))
-      .catch((error) => dispatch({ type: "dataFailed" }));
+    dispatch({ type: "loading" });
+
+    setTimeout(() => {
+      dispatch({ type: "dataRecived", payload: quzie.React });
+    }, 5000);
+    // fetch(quzie)
+    //   .then((res) => res.json())
+    //   .then((data) => dispatch({ type: "dataRecived", payload: data.React }))
+    //   .catch((error) => dispatch({ type: "dataFailed" }));
   }, []);
 
   return (
