@@ -60,8 +60,6 @@ export default function App() {
   const numOfQuestions = qusetions?.length;
   const maxPoints = qusetions.reduce((prev, cur) => prev + cur.points, 0);
 
-  console.log(quzie);
-
   useEffect(() => {
     dispatch({ type: "loading" });
 
